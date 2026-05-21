@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Components</title>
+</head>
+<body>
+    <div class="js-container"></div>
+    <script src="https://unpkg.com/supersimpledev/day.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+        function ChatInput(){
+        return ( 
+        <>
+            <input type="text" placeholder="send a msg to chat bot" size="30" />
+            <button>Send</button>
+        </>
+        )
+        };
+        /* props : {
+        message : "Hello"
+        }
+        */
+        function ChatMsg(props){
+            console.log(props)
+            // let msg = props.message;
+            // const sender = props.sender;
+
+            // destructurring
+            const {message, sender} = props;
+
+            
+         return (
+                 <div>
+                 {sender === "bot" && <img src="bot.jpg" width = '50'></img>}
+                 {message}
+                 {sender === 'user' && <img src="user.jpg" width = '50'></img>}
+                 </div>
+            )
+         }
+
+        //     if (sender == 'bot'){
+        //         return (
+        //         <div>
+        //         <img src="bot.jpg" width = '50'></img>
+        //         {message}
+        //         </div>
+        //     )
+        // }
+        
+        //     return (
+        //         <div>
+        //         {sender === "bot" && <img src="bot.jpg" width = '50'></img>}
+        //         {message}
+        //         <img src="bot.jpg" width = '50'></img>
+        //         </div>
+        //     )
+        // }
+        const app = <>
+        <ChatInput/>
+        <ChatMsg message = "Hello" sender = "user"/>
+        <ChatMsg message = "Hello! How are can I help You?" sender = "bot"/>
+        <ChatMsg message = "Flip the coin" sender = "user"/>
+        <ChatMsg message = 'Sure! You got heads' sender = "bot"/>
+        <ChatMsg message = 'Thanku ' sender = "user" />
+        <ChatMsg message= "No problem!  when u need help ask me " sender = "bot"/>
+
+            </>
+          const container = document.querySelector('.js-container'); // Fixed typo
+           ReactDOM.createRoot(container).render(app); // Fixed typo
+</script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rivision </title>
+</head>
+<body>
+    <div class="js-container"></div>
+    <script src="react_basic.js"></script>
+    <script src="https://unpkg.com/supersimpledev/day.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel"> 
+
+    let name = 'sam';
+
+const html = (
+    <>
+        <input type="text" />
+        <button>Testme</button>
+        <p>Hello somnath </p>
+        <p>how are you {name}</p>
+    </>
+);
+
+const product = (
+    <>
+        <p>Cotton Socks</p>
+        <p>Cost: $10</p>
+        <button>Add to cart </button>
+    </>
+);
+
+
+const socks = 10;
+const tshirt = 8 * 2;
+const totalprice = socks + tshirt
+const shippingCost = 6;
+const finalPrice =  totalprice + shippingCost;
+const product1 = <>
+            <p>Product Cost : ${totalprice}</p>
+            <p>Shipping Cost : ${shippingCost}</p>
+            <p>final cost :${finalPrice}</p>
+            <button>Place Your Order</button>
+        </>
+
+// const  date = dayjs().format('MMMM DD');
+const currentDate = dayjs().format('MMMM DD');
+const PrintDate = <p> Today is {currentDate}</p>
+
+// Target the container once
+const container = document.querySelector('.js-container');
+const root = ReactDOM.createRoot(container);
+
+// Render both together inside a parent wrapper
+root.render(
+    <>
+        {html}
+        {product}
+        {product1}
+        {PrintDate}
+    </>
+);
+
+
+
+    </script>
+</body>
+</html>
