@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerice NO 4 practice</title>
+    <style>
+        .switch-btn{
+            background-color: rgb(25, 135, 84);
+            color: white;
+            font-size: 16px;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 8px;
+        }
+        .switch-btn-on{
+            background-color: rgb(25, 135, 84);
+        }
+        .switch-btn-off{
+            background-color: rgb(255, 0, 0);
+        }
+    </style>
+</head>
+<body>
+    <div class="js-container"></div>
+    <script src="https://unpkg.com/supersimpledev/day.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+    function App(){
+        const [isButtonOn, setIsButtonOn ]= React.useState(false);
+        
+        function toggleButton(){
+            setIsButtonOn(!isButtonOn)
+        }
+        return (
+        <div>
+            <button className = {`switch-btn ${isButtonOn ? "switch-btn-on":"switch-btn-off"}`}
+            onClick = {toggleButton}>
+            {isButtonOn ? 'On':'Off'}
+            </button>
+        </div>
+        )
+        
+    };
+    const container = document.querySelector('.js-container'); 
+    ReactDOM.createRoot(container).render(<App/>); 
+</script>
+</body>
+</html>

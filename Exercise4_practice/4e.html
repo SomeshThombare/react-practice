@@ -1,0 +1,92 @@
+<!-- rgb(0,123,255) -->
+ <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exerice NO 4 practice</title>
+    <style>
+        .input-email{
+            height: 20px;
+            font-size: 16px;
+            border-radius: 1px;
+            border-width: 1px;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 170px;
+        }
+        .input-password{
+            margin-top: 8px;
+            height: 20px;
+            font-size: 16px;
+            border-width: 1px;
+            font-family: Arial, Helvetica, sans-serif;
+            width: 170px;
+        }
+        .show-btn{
+            margin-left: 10px;
+            height: 15px;
+            font-size: 10px;
+            border-radius: 2px;
+            border-width: 1px;
+        }
+       .login-btn{
+        background-color:rgb(0,123,255) ;
+        margin-top: 12px;
+        border: none;
+        font-size: 16px;
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+       }
+       .sign-in-btn{
+        background-color: rgb(0,123,255);
+         border: none;
+        font-size: 16px;
+        color: white;
+        padding: 8px;
+        border-radius: 8px;
+        margin-left: 10px;
+       }
+    </style>
+</head>
+<body>
+    <div class="js-container"></div>
+    <script src="https://unpkg.com/supersimpledev/day.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+    function App(){
+
+        const [showPassword, setShowPassword]= React.useState(ture);
+        
+        function handelPassword(){
+
+        }
+        return (
+        <>
+        <p>Hello, welcome to my website</p>
+
+       <div>
+            <input className ='input-email' type="email" placeholder="Email"/>
+        </div>
+
+        <div>
+            <input className ='input-password' 
+            type = {showPassword ? "text" :"password"} 
+            placeholder='password'
+            />
+            <button className="show-btn" onClick = {handelPassword}>Show</button>
+        </div>
+
+        <div>
+            <button className="login-btn">Login</button>
+            <button className="sign-in-btn">Sign up</button>
+        </div>
+        </>
+    )};
+    const container = document.querySelector('.js-container'); 
+    ReactDOM.createRoot(container).render(<App/>); 
+</script>
+</body>
+</html>
