@@ -1,8 +1,10 @@
-function Price(){
-    return(
+// Price.jsx
+function Price({ oldPrice, newPrice }) {
+    return (
         <div>
-            <p>oldPrice</p>
-            <p>newPrice</p>
+            <span style={{ textDecoration: "line-through" }}>{oldPrice}</span>
+            &nbsp;&nbsp;&nbsp;
+            <span><b>{newPrice}</b></span>
         </div>
     );
 }
