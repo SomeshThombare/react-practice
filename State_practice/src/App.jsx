@@ -3,6 +3,7 @@ import './App.css'
 import LinkButton from './LinkButton'
 import LudoBoard from './LudoBoard'
 import TODOLIst from './todo'
+import LotteryGame from './LoteryGame'
 function App() {
  
   return (
@@ -13,7 +14,8 @@ function App() {
     <p>play a</p> */}
 
     {/* <LudoBoard/> */}
-    <TODOLIst/>
+    {/* <TODOLIst/> */}
+    <LotteryGame/>
   
     </>
   )
