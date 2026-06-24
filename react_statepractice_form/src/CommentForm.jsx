@@ -1,5 +1,7 @@
 import { useState } from "react";
-export default function CommentForm() {
+
+// 1. ADDED: { addNewComment } prop destructured here
+export default function CommentForm({ addNewComment }) { 
 
     let [formData, setFormData] = useState({
         username: "",
@@ -15,9 +17,14 @@ export default function CommentForm() {
             }
         });
     };
+    
     let handleSubmit = (event) => {
         event.preventDefault();
         console.log(formData);
+        
+        // 2. ADDED: This sends the new comment back up to the parent UI state
+        addNewComment(formData); 
+        
         setFormData({
             username: "",
             remarks: "",
@@ -32,7 +39,6 @@ export default function CommentForm() {
                 <label htmlFor="username">Username:</label>
                 <input type="text" 
                 placeholder="Enter Username" 
-                type="text" 
                 value={formData.username}
                 onChange={handleInputChange}
                 name="username"
@@ -46,8 +52,7 @@ export default function CommentForm() {
                 onChange={handleInputChange}
                 name="remarks"
                 id="remarks"
-            
-                >Remarks</textarea>
+                /> {/* 💡 FIXED: Self-closed textarea tag to prevent text injection bugs */}
                 <br /><br />
 
                 <label htmlFor="rating">Rating:</label>
@@ -65,5 +70,4 @@ export default function CommentForm() {
             </form>
         </div>
     );
-}   
-
+}
