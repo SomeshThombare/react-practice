@@ -67,7 +67,7 @@ export default function SearchBox({updateInfo}) {
           onChange={handleChange}/>
           <br></br> <br></br>
 
-           <Button variant="contained" 
+           <Button variant="contained"  id="btn"
            type='submit'> Search</Button>
            {error && <p>No such place exist!</p>}
       </form>
