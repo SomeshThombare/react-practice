@@ -1,60 +1,43 @@
-import { useState } from 'react'
+import { ThemeProvider } from './assets/context/thems.js'
+import { useEffect, useState } from 'react'
+import './App.css'
+import Card from './assets/components/Card'
+import ThemeBtn from './assets/components/ThemeBtn'
 
 function App() {
-  const [color, setColor] = useState("olive") 
+  const [themeMode, setThemeMode] = useState("light")
+
+  const lightTheme = () => {
+    setThemeMode("light")
+  }
+
+  const darkTheme = () => {
+    setThemeMode("dark")
+  }
+
+  // actual change in theme
+
+  useEffect(() => {
+    document.querySelector('html').classList.remove("light", "dark")
+    document.querySelector('html').classList.add(themeMode)
+  }, [themeMode])
+  
 
   return (
-    <div 
-      className='w-screen h-screen duration-200 transition-colors' 
-      style={{ backgroundColor: color }}
-    >
-      <div className="fixed flex flex-wrap justify-center bottom-12 inset-x-0 px-2">
-        <div className='flex flex-wrap justify-center gap-3 shadow-lg bg-white px-4 py-2 rounded-3xl'>
-          
-          <button 
-            onClick={() => setColor("red")}
-            className='outline-none px-4 py-2 rounded-full text-white font-medium shadow-sm' 
-            style={{backgroundColor: "red"}}
-          >
-            Red
-          </button>
+    <ThemeProvider value={{themeMode, lightTheme, darkTheme}}>
+      <div className="flex flex-wrap min-h-screen items-center">
+          <div className="w-full">
+              <div className="w-full max-w-sm mx-auto flex justify-end mb-4">
+                  <ThemeBtn />
+              </div>
 
-          <button 
-            onClick={() => setColor("brown")}
-            className='outline-none px-4 py-2 rounded-full text-white font-medium shadow-sm' 
-            style={{backgroundColor: "brown"}}
-          >
-            Brown
-          </button>
-
-          <button 
-            onClick={() => setColor("green")}
-            className='outline-none px-4 py-2 rounded-full text-white font-medium shadow-sm' 
-            style={{backgroundColor: "green"}}
-          >
-            Green
-          </button>
-
-          <button 
-            onClick={() => setColor("blue")}
-            className='outline-none px-4 py-2 rounded-full text-white font-medium shadow-sm' 
-            style={{backgroundColor: "blue"}}
-          >
-            Blue
-          </button>
-
-          <button 
-            onClick={() => setColor("yellow")}
-            className='outline-none px-4 py-2 rounded-full text-black font-medium shadow-sm' 
-            style={{backgroundColor: "yellow"}}
-          >
-            Yellow
-          </button>
-
-        </div>
+              <div className="w-full max-w-sm mx-auto">
+                  <Card />
+              </div>
+          </div>
       </div>
-    </div>
+    </ThemeProvider>
   )
 }
 
-export default App   
+export default App

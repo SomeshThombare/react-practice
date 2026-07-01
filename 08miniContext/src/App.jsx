@@ -8,7 +8,7 @@ function App() {
   return (
     <>
      <UserContextProvider>
-      <h2>Welcpme to Context API</h2>
+      <h2>Welcome to Context API</h2>
       <Login/>
       <Profile/>
      </UserContextProvider>
