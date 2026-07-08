@@ -6,6 +6,8 @@ import TODOLIst from './todo'
 import LotteryGame from './LoteryGame'
 import TicketNum from './Ticket'
 import Ticket from './Ticket'
+import AsyncStateExample from './Asynchrnous'
+import Calculator from './Tempreture'
 function App() {
  
   return (
@@ -23,8 +25,12 @@ function App() {
     <Ticket ticket={[1, 2, 3]} /> */}
 
         <h1>Lottery Game</h1>
-      <LotteryGame n={3} winningSum={15}/>
-      <LotteryGame n={4} winningSum={15}/>
+      {/* <LotteryGame n={3} winningSum={15}/>
+      <LotteryGame n={4} winningSum={15}/> */}
+
+      {/* <AsyncStateExample/> */}
+
+      <Calculator/>
   
     </>
   )
