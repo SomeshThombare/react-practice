@@ -2,6 +2,7 @@ import Form from "./Form";
 import CommentForm from "./CommentForm";
 import Comments from "./Comments";
 import Joke from "./Joke";
+import Login from './UnControlledComponent'
 export default function App() {
   return (
     <div className="App">
@@ -12,6 +13,7 @@ export default function App() {
       {/* <CommentForm /> */}
 
       <Joke/>
+      <Login/>
 
     </div>
   );
