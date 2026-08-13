@@ -6,7 +6,7 @@ import LoginForm from './Components/loginpage';
   function App() {
     return (
         <>
-            {/* <WelcomeMessage /> */}
+            <WelcomeMessage />
             <Loginorm />
         </>
     );
