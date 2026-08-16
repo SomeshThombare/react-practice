@@ -49,7 +49,7 @@ export default function Form() {
 
             />
             <br />
-            <br/>
+            
             <label htmlFor="username">Username: </label>
             <input
             placeholder="Enter Username"
