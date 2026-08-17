@@ -6,16 +6,16 @@ export default function Form() {
         password: "",
     });
 
-    // let [fullName, setFullName] = useState((""));
-    // let [username, setUsername] = useState((""));
+    let [fullName, setFullName] = useState((""));
+    let [username, setUsername] = useState((""));
 
-    // let handleNameChange = (event) => {
-    //     setFullName(event.target.value);
-    // };
+    let handleNameChange = (event) => {
+        setFullName(event.target.value);
+    };
 
-    // let handleUsername = (event) => {
-    //     setUsername(event.target.value);
-    // };
+    let handleUsername = (event) => {
+        setUsername(event.target.value);
+    };
 
     let handleInputChange = (event) => {
         setFormData((prevFormData) => {
